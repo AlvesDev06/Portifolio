@@ -1,0 +1,329 @@
+@charset "UTF-8";
+
+/* Reset completo */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e3e8ee 100%);
+  color: #1a237e;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  background-attachment: fixed;
+}
+
+/* Cabeçalho */
+header {
+  background: linear-gradient(90deg, #1976d2 60%, #1a237e 100%);
+  color: #fff;
+  padding: 4rem 2rem 2rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(26, 35, 126, 0.15);
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+header p {
+  font-size: 1.3rem;
+  opacity: 0.95;
+}
+
+/* Foto do Perfil */
+.profile-photo-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto 2.5rem;
+  animation: floatIn 1.5s ease-out;
+}
+
+@keyframes floatIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.profile-photo {
+  width: 400px;
+  height: 400px;
+  border-radius: 20px;
+  object-fit: cover;
+  border: 1px solid #fff;
+  box-shadow: 0 10px 30px rgba(25, 118, 210, 0.25);
+  transition: all 0.4s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: 0 16px 40px rgba(25, 118, 210, 0.35);
+}
+
+/* Navegação - SEM STICKY */
+nav {
+  background: #1976d2;
+  padding: 1rem 0;
+  /* position: sticky removido */
+  box-shadow: 0 2px 12px rgba(26,35,126,0.1);
+  margin-bottom: 2rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.8rem 1.4rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+nav ul li a:hover {
+  background: #1565c0;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* Seções */
+section {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 24px rgba(26,35,126,0.08);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 2.2rem;
+  font-size: 2.1rem;
+  color: #1976d2;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #1a237e, #1976d2);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* Descrição e Futuro */
+.about p,
+.future p {
+  font-size: 1.15rem;
+  margin-bottom: 1.4rem;
+  text-align: justify;
+  color: #333;
+  text-indent: 30px;
+  line-height: 1.8;
+}
+
+/* Conquistas */
+.achievement {
+  background: #f0f4f8;
+  border-left: 6px solid #1976d2;
+  padding: 1.3rem 2rem;
+  margin-bottom: 1.8rem;
+  border-radius: 0 14px 14px 0;
+  box-shadow: 0 3px 10px rgba(26,35,126,0.06);
+  transition: all 0.4s ease;
+}
+
+.achievement:hover {
+  transform: translateX(10px);
+  background: #d9e2ec;
+  box-shadow: 0 8px 20px rgba(26,35,126,0.12);
+}
+
+.achievement h3 {
+  color: #1a237e;
+  margin-bottom: 0.4rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.achievement .issuer {
+  color: #1976d2;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.achievement .date {
+  color: #555;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* Hobbies */
+.hobbies-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.4rem;
+  margin-top: 1.5rem;
+}
+
+.hobby {
+  background: #e3e8ee;
+  color: #1a237e;
+  padding: 1.1rem 2.2rem;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(26,35,126,0.08);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.hobby:hover {
+  background: #1976d2;
+  color: #fff;
+  transform: translateY(-5px) scale(1.08);
+  box-shadow: 0 12px 25px rgba(25,118,210,0.25);
+}
+
+/* Contato */
+.contact {
+  text-align: center;
+  background: #e3e8ee;
+  border-radius: 16px;
+  padding: 2.2rem 1rem;
+  box-shadow: 0 3px 12px rgba(25,118,210,0.08);
+}
+
+.contact p {
+  margin-bottom: 1.5rem;
+  font-size: 1.15rem;
+  color: #333;
+}
+
+.social-links {
+  margin-top: 1.5rem;
+}
+
+.social-links a {
+  margin: 0 1.4rem;
+  transition: all 0.4s ease;
+  display: inline-block;
+}
+
+.social-links i {
+  color: #1976d2;
+  font-size: 2.4rem;
+  transition: all 0.4s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-6px) scale(1.2);
+}
+
+.social-links i:hover {
+  color: #1a237e;
+  text-shadow: 0 4px 8px rgba(26,35,126,0.2);
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 2.2rem;
+  background: linear-gradient(90deg, #1976d2 60%, #1a237e 100%);
+  color: #fff;
+  font-size: 0.98rem;
+  letter-spacing: 1.2px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  margin-top: 3rem;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+}
+
+/* ========================================
+   RESPONSIVO: Mobile com impacto
+   ======================================== */
+
+@media (max-width: 600px) {
+  /* Foto GRANDE em mobile */
+  .profile-photo {
+    width: 200px !important;
+    height: 200px !important;
+    border-radius: 20px;
+    box-shadow: 0 12px 25px rgba(25,118,210,0.3);
+  }
+
+  /* Cabeçalho */
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1.1rem;
+  }
+
+  /* Navegação */
+  nav ul li a {
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+  }
+
+  /* Seções */
+  section {
+    padding: 2.5rem 1rem;
+    margin: 1.5rem auto;
+    border-radius: 16px;
+  }
+
+  section h2 {
+    font-size: 1.8rem;
+  }
+
+  /* Hobbies */
+  .hobby {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.2rem;
+  }
+
+  /* Rodapé */
+  footer {
+    padding: 1.5rem;
+    font-size: 0.85rem;
+    border-radius: 20px;
+  }
+}
