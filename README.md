@@ -18,7 +18,7 @@ O layout combina tipografia padrão, cores harmoniosas e efeitos sutis de transi
 ## Como Rodar
 
 1. Clone ou baixe o repositório.
-2. Abra o arquivo `index.html` no navegador.
+2. Acesso o Link do projeto hospedado na aba `sobre` ao lado direito.
 3. Navegue pelo portfólio para visualizar projetos e informações.
 
 ## Funcionalidades
